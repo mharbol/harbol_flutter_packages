@@ -9,7 +9,7 @@ void main() async {
     // URL for today's (30 June 2021) Calvin and Hobbes
     url: 'https://www.gocomics.com/calvinandhobbes/2021/06/30', 
 
-    // be beginning of the "regex sandwich" which is the start of
+    // the beginning of the "regex sandwich" which is the start of
     // the HTML showing the comic source
     regexStart: 'data-image=\\\"', 
 
