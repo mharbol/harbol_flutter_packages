@@ -166,9 +166,11 @@ packages:
   web_regex:
     dependency: "direct main"
     description:
-      path: "../web_regex"
-      relative: true
-    source: path
+      path: web_regex
+      ref: HEAD
+      resolved-ref: abd14ab5c554be1bf5bac56c025888e8d0feb61d
+      url: "git://github.com/mharbol/harbol_flutter_packages.git"
+    source: git
     version: "1.0.0"
 sdks:
   dart: ">=2.12.0 <3.0.0"

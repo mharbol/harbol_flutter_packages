@@ -3,7 +3,7 @@ description: A new Flutter package project.
 version: 0.0.1
 homepage:
 
-# this is here so the local imports don't make the whole thing go crazy
+# this is here so the git imports don't make the whole thing go crazy
 publish_to: none
 
 environment:
@@ -14,7 +14,9 @@ dependencies:
   flutter:
     sdk: flutter
   web_regex:
-    path: ../web_regex/
+    git: 
+      url: git://github.com/mharbol/harbol_flutter_packages.git
+      path: web_regex
 
 dev_dependencies:
   flutter_test:
