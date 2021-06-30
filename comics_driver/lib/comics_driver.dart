@@ -16,7 +16,7 @@ class ComicGetter {
   String urlFormat;
 
   // static members for the urlFormat
-  static const String BASE_URL = '\$BASE_URL_TOKEN';
+  static const String COMIC_URL = '\$COMIC_URL_TOKEN';
   static const String YEAR = '\$YEAR4_TOKEN';
   static const String MONTH_NUMBER = '\$MONTH_TOKEN';
   static const String DATE_NUMBER = '\$DATE_TOKEN';
@@ -32,6 +32,7 @@ class ComicGetter {
                this.regexBody = WebRegex.WILDCARD}){
                  
     // build the urlFormat by doing a lot of fancy replaces...
-    
+    // get the different components from the date to replace the tokens in urlFormat
+    var dateTimeNow = DateTime.now().toString();
   }
 }
