@@ -23,6 +23,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  
+  # this is where we get the comics_driver package (which this currently is)
+  comics_driver:
+    path: ../
 
 
   # The following adds the Cupertino Icons font to your application.
