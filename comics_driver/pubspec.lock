@@ -168,7 +168,7 @@ packages:
     description:
       path: web_regex
       ref: HEAD
-      resolved-ref: abd14ab5c554be1bf5bac56c025888e8d0feb61d
+      resolved-ref: f087f4c8a526b042902f8f8303a6dd03f6f21a40
       url: "git://github.com/mharbol/harbol_flutter_packages.git"
     source: git
     version: "1.0.0"

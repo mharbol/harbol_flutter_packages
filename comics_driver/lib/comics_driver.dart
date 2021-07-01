@@ -49,9 +49,18 @@ class ComicGetter {
 
     // make a WebRegex object with the comicTitleURL in the ComicGetter's urlFormat
     WebRegex wr = WebRegex(
-      url: urlFormat.replaceAll(COMIC_URL_TOKEN, comicTitleURL, 
-      regexStart: this.regexStart, 
-      regexEnd: this.regexEnd);
-    return '';
+      url: urlFormat.replaceAll(COMIC_URL_TOKEN, comicTitleURL), 
+      regexStart: regexStart, 
+      regexEnd: regexEnd
+    );
+
+    // use wr to extract the comic source
+    String out = await wr.extract();
+
+    // for debugging purposes, print to console
+    print(out);
+
+    // and finally return it
+    return out;
   }
 }
