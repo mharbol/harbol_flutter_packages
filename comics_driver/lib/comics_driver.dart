@@ -33,6 +33,6 @@ class ComicGetter {
                  
     // build the urlFormat by doing a lot of fancy replaces...
     // get the different components from the date to replace the tokens in urlFormat
-    var dateTimeNow = DateTime.now().toString();
+    // var dateTimeNow = DateTime.now().toString();
   }
 }
