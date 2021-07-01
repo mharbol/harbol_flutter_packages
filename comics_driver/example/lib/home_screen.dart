@@ -11,10 +11,18 @@ class HomeScreen extends StatelessWidget {
     // simple scaffold with a Comic Card
     return Scaffold(
 
+      backgroundColor: Colors.grey[300],
+
       // easy AppBar just to let you know what it is
       appBar: AppBar(
         title: Text('Daily Comics Demo'),
         centerTitle: true,
+      ),
+
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {  },
+        child: Icon(Icons.add),
+        tooltip: 'Add Comic',
       ),
 
       // center the single ComicCard to demo what it looks like
@@ -23,8 +31,13 @@ class HomeScreen extends StatelessWidget {
       body: Center(
         child: Card(
           child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Calvin and Hobbes'),
+              Text('Calvin and Hobbes',
+              textScaleFactor: 2),
+
+              // this will eventually have to become a FutureBuilder.... ahhhhh
               Image(
                 image: NetworkImage('https://assets.amuniversal.com/8b61490094d601395dfb005056a9545d'),
               ),

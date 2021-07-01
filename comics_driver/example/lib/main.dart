@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Daily Comics Demo',
       home: HomeScreen(),
 
+
     );
   }
 
