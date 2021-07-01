@@ -10,8 +10,8 @@ class WebRegex {
   String url;
 
   // start and end of the RegEx for whatever we want to extract
-  String regexStart;
-  String regexEnd;
+  String regexStart = '';
+  String regexEnd = '';
 
   // this denotes the RegEx for the body. We just use wildcard as a default
   String bodyRegex;

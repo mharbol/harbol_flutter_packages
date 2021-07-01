@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
       // in the future, ComicCard will be its own class that links
       // nicely with the ComicInfo class (TBP)
       body: Center(
-        
+        child: Card(),
       ),
     );
   }
