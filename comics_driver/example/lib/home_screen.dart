@@ -1,6 +1,6 @@
-
-import 'package:comics_driver/comics_driver.dart';
+import 'package:comics_driver/comic_card.dart';
 import 'package:flutter/material.dart';
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({ Key? key }) : super(key: key);
@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
       ),
 
       floatingActionButton: FloatingActionButton(
-        onPressed: () {  },
+        onPressed: () => _toastNewComic(context),
         child: Icon(Icons.add),
         tooltip: 'Add Comic',
       ),
@@ -28,22 +28,72 @@ class HomeScreen extends StatelessWidget {
       // center the single ComicCard to demo what it looks like
       // in the future, ComicCard will be its own class that links
       // nicely with the ComicInfo class (TBP)
-      body: Center(
-        child: Card(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text('Calvin and Hobbes',
-              textScaleFactor: 2),
+      body: ReorderaboleList(),
+    );
+  }
 
-              // this will eventually have to become a FutureBuilder.... ahhhhh
-              Image(
-                image: NetworkImage('https://assets.amuniversal.com/8b61490094d601395dfb005056a9545d'),
-              ),
-            ],
-          ),
-        ),
+  // toasts a message that says that this is where new comics will be added
+  void _toastNewComic(BuildContext context){
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text("This is where we would add a \"New Comic\" page."),
+    ));
+  }
+}
+
+
+/*
+
+
+Reorderable list stuff
+
+
+
+
+
+
+*/
+
+
+// pretty much just copying what the tutorial had
+class ReorderaboleList extends StatefulWidget {
+
+  const ReorderaboleList({ Key? key }) : super(key: key);
+
+  @override
+  _ReorderaboleListState createState() => _ReorderaboleListState();
+}
+
+class _ReorderaboleListState extends State<ReorderaboleList> {
+
+  final List<ComicCard> _items = [
+    ComicCard(title: 'Calvin and Hobbes', imgSrc: 'assets/cal_and_hob.gif'),
+    ComicCard(title: 'Frazz', imgSrc: 'assets/frazz.gif'),
+    ComicCard(title: 'Pearls Before Swine', imgSrc: 'assets/pearls.gif'),
+    ComicCard(title: 'Andy Capp', imgSrc: 'assets/andy_capp.gif'),
+    ComicCard(title: 'Peanuts', imgSrc: 'assets/peanuts.gif'),
+    ComicCard(title: 'B.C.', imgSrc: 'assets/bc.gif'),
+    ComicCard(title: 'Dilbert', imgSrc: 'assets/dilbert.gif'),
+    ComicCard(title: 'Foxtrot', imgSrc: 'assets/foxtrot.gif'),
+    ComicCard(title: 'Crabgrass', imgSrc: 'assets/crabgrass.gif'),
+    ComicCard(title: 'Wizard of Id', imgSrc: 'assets/wizard.gif'),
+    
+  ];
+
+  // called by ReorderableList after list child dropped into pos
+  void _onReorder(int oldIndex, int newIndex){
+    setState(() {
+      final newIdx = newIndex > oldIndex ? newIndex - 1 : newIndex;
+      final item = _items.removeAt(oldIndex);
+      _items.insert(newIdx, item);
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: ReorderableListView(
+        onReorder: _onReorder,
+        children: _items,
       ),
     );
   }
