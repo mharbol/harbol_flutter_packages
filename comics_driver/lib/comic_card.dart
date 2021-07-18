@@ -8,7 +8,7 @@ class ComicCard extends StatelessWidget{
   // scr of the comic image... for these purposes in assets
   final String imgSrc;
 
-  late Key key;
+  late final Key key;
 
 ComicCard({required this.title, required this.imgSrc}){
   key = Key(title);

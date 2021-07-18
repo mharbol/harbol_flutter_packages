@@ -9,6 +9,7 @@ import 'package:web_regex/web_regex.dart';
 // when needed for comic retrieval
 class ComicGetter {
 
+  // ignore: non_constant_identifier_names
   static ComicGetter GO_COMICS_GETTER = ComicGetter(
       urlFormat: 'https://www.gocomics.com/' + COMIC_URL_TOKEN + '/2021/07/01', 
       regexStart: 'data-image=\\\"', 
