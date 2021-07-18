@@ -28,7 +28,7 @@ class HomeScreen extends StatelessWidget {
       // center the single ComicCard to demo what it looks like
       // in the future, ComicCard will be its own class that links
       // nicely with the ComicInfo class (TBP)
-      body: ReorderaboleList(),
+      body: ComicList(),
     );
   }
 
@@ -55,15 +55,15 @@ Reorderable list stuff
 
 
 // pretty much just copying what the tutorial had
-class ReorderaboleList extends StatefulWidget {
+class ComicList extends StatefulWidget {
 
-  const ReorderaboleList({ Key? key }) : super(key: key);
+  const ComicList({ Key? key }) : super(key: key);
 
   @override
-  _ReorderaboleListState createState() => _ReorderaboleListState();
+  _ComicListState createState() => _ComicListState();
 }
 
-class _ReorderaboleListState extends State<ReorderaboleList> {
+class _ComicListState extends State<ComicList> {
 
   final List<ComicCard> _items = [
     ComicCard(title: 'Calvin and Hobbes', imgSrc: 'assets/cal_and_hob.gif'),
