@@ -14,9 +14,9 @@ ComicCard({required this.title, required this.imgSrc}){
   key = Key(title);
 }
 
+@override
 Widget build(BuildContext context){
-  return 
-  Card(
+  return Card(
     child: Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,

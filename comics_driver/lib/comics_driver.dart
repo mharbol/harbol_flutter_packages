@@ -2,16 +2,16 @@ library comics_driver;
 
 import 'package:web_regex/web_regex.dart';
 
-
-
 // the ComicGetter class is bound to a specific website to get comics.
 // A static ComicGetter will exist for all websites and will be pointed to
 // when needed for comic retrieval
 class ComicGetter {
 
+
   // ignore: non_constant_identifier_names
-  static ComicGetter GO_COMICS_GETTER = ComicGetter(
-      urlFormat: 'https://www.gocomics.com/' + COMIC_URL_TOKEN + '/2021/07/01', 
+  static final ComicGetter GO_COMICS_GETTER = ComicGetter(
+    //TODO: Create better date formatting in comic URL
+      urlFormat: 'https://www.gocomics.com/$COMIC_URL_TOKEN/2022/01/28', 
       regexStart: 'data-image=\\\"', 
       regexEnd: '\\\"'
     );
@@ -25,6 +25,7 @@ class ComicGetter {
   String urlFormat;
 
   // static members for the urlFormat
+  /// Token in this specific comic's URL.
   static const String COMIC_URL_TOKEN = '\$COMIC_URL_TOKEN';
   static const String YEAR = '\$YEAR4_TOKEN';
   static const String MONTH_NUMBER = '\$MONTH_TOKEN';
@@ -52,7 +53,7 @@ class ComicGetter {
     WebRegex wr = WebRegex(
       url: urlFormat.replaceAll(COMIC_URL_TOKEN, comicTitleURL), 
       regexStart: regexStart, 
-      regexEnd: regexEnd
+      regexEnd: regexEnd,
     );
 
     // use wr to extract the comic source
